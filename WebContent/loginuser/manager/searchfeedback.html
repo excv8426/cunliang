@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>查看外呼反馈</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Le styles -->
+<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link
+	href="../../bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css"
+	rel="stylesheet">
+<style type="text/css">
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+.sidebar-nav {
+	padding: 9px 0;
+}
+
+#footer {
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	height: 30px;
+	width: 100%;
+	background: #DDDDDD;
+}
+
+@media ( max-width : 980px) {
+	/* Enable use of floated navbar text */
+	.navbar-text.pull-right {
+		float: none;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
+</style>
+<link href="../../bootstrap/css/bootstrap-responsive.min.css"
+	rel="stylesheet">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="../../bootstrap/js/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse"
+					data-target=".nav-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="brand" id="homepage_a" href="searchclient.html">首页</a>
+				<div class="nav-collapse collapse">
+					<p class="navbar-text pull-right">
+						登录用户： <a href="#" class="navbar-link"></a>
+					</p>
+					<ul class="nav">
+						<li><a href="searchclient.html">外呼</a></li>
+						<li><a href="callbyclient.html">来电和预警</a></li>
+						<li class="active"><a href="#">查看外呼反馈</a></li>
+						<li><a href="allocation.html">派单</a></li>
+						<li><a href="searchallocation.html">查看派单</a></li>
+						<li><a href="updatepassword.html">修改密码</a></li>
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+
+			<div class="span12">
+				<div class="accordion" id="accordion2">
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse"
+								data-parent="#accordion2" href="#collapseOne">
+								请输入查询条件，默认查询所有反馈记录。 </a>
+						</div>
+						<div id="collapseOne" class="accordion-body collapse in">
+							<div class="accordion-inner">
+								<div class="hero-unit">
+									<div class="row-fluid">
+										<div class="span3">
+											反馈日期 
+										</div>
+										<div class="span2">
+											外呼策略 
+										</div>
+										<div class="span2">
+											成功办理业务 
+										</div>
+										<div class="span2">
+											不办理原因 
+										</div>
+										<div class="span2">
+											预警策略 
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="span3">
+											<input type="text" class="input-small"
+												id="fankuiriqilo_input" placeholder="">~<input
+												type="text" class="input-small" id="fankuiriqihi_input"
+												placeholder="">
+										</div>
+										<div class="span2">
+											<input type="text" class="input-small"
+												id="waihucelve_input">
+										</div>
+										<div class="span2">
+											<select id="chenggongbanliyewu_select"
+												class="input-medium"><option></option>
+												<option>3G合约期内续约</option>
+												<option>3G单卡续约</option>
+												<option>3G单卡</option>
+												<option>4G合约期内续约</option>
+												<option>4G单卡续约</option>
+												<option>4G单卡</option>
+												<option>4G终端合约</option>
+												<option>4G融合—智慧沃家</option>
+												<option>4G融合—沃自由</option></select>
+										</div>
+										<div class="span2">
+											<select id="bubanliyuanyin_select" class="input-medium"><option></option>
+												<option>A.用户已办理108业务</option>
+												<option>B.无4G需求</option>
+												<option>C.已向用户介绍108资费</option>
+												<option>D.证件不符或不是实名制无法提供证件</option>
+												<option>E.有离网倾向</option>
+												<option>F.客户希望更改低于原套餐资费的4G资费</option>
+												<option>G.信号问题</option>
+												<option>H.强烈抵触联通回访用户</option>
+												<option>I.集团客户，单位统一办理</option>
+												<option>J.不在本地</option>
+												<option>K.客户为老人、孩子，无法正常理解资费</option>
+												<option>L.不喜欢此终端</option>
+												<option>M.其他（需在备注写明原因）</option></select>
+										</div>
+										<div class="span2">
+											<select id="yujingcelve_select" class="input-medium"><option></option>
+												<option>高价值极低预警</option>
+												<option>预销户营业通知及挽留</option>
+												<option>预销户</option>
+												<option>异网客服</option>
+												<option>呼转异网</option>
+												<option>使用突降</option>
+												<option>三无</option>
+												<option>停机15天</option>
+												<option>OCS充值期锁定期</option>
+												<option>上月不出账用户</option>
+												<option>系统预拆</option>
+												<option>客户套餐适配（溢出、不饱和、）</option>
+												<option>欠停7天</option></select>
+										</div>
+									</div>
+
+									<div class="row-fluid">
+										<div>
+											<div style="text-align: center">
+												<div class="btn-group">
+													<button class="btn" id="searchfeedback_button">查询</button>
+													<button class="btn" id="extractfeedback_button">导出Excel</button>
+													<button class="btn" id="cancel_button">取消</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<h5 id="statistics_container" style="padding: 0px 0px 0px 20px"></h5>
+				</div>
+				<div class="row-fluid">
+					<div style="width: 100%; height: 100%; overflow: auto;">
+						<div style="width: 2700px; height: auto;">
+							<table class="table table-bordered table-condensed"
+								id="feedback_table">
+								<thead>
+									<tr>
+									    <th>编号</th>
+										<th>外呼经理姓名</th>
+										<th>所属班组</th>
+										<th>外呼号码</th>
+										<th>区县</th>
+										<th>外呼策略</th>
+										<th>回访情况</th>
+										<th>客户意向</th>
+										<th>成功办理业务</th>
+										<th>不办理原因</th>
+										<th>其他不办理原因</th>
+										<th>流失预警区域</th>
+										<th>预警策略</th>
+										<th>是否有离网倾向</th>
+										<th>流失原因</th>
+										<th>挽留结果</th>
+										<th>挽留手段</th>
+										<th>失败原因</th>
+										<th>预警用户查询及回访时长（分）</th>
+										<th>备注</th>
+										<th>反馈日期</th>
+									</tr>
+								</thead>
+								<tbody>
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="pagination">
+						<ul>
+						</ul>
+					</div>
+				</div>
+				<!--/row-->
+				<div class="row-fluid"></div>
+				<!--/row-->
+			</div>
+			<!--/span-->
+		</div>
+		<!--/row-->
+
+		<hr>
+
+		<div class="row-fluid" id="footer">
+			<div class="span6 offset2">&nbsp;使用Chrome、 Internet Explorer
+				11、Internet Explorer 10浏览效果更好</div>
+		</div>
+
+	</div>
+	<!--/.fluid-container-->
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"
+				aria-hidden="true">×</button>
+			<h3 id="myModalLabel">提示</h3>
+		</div>
+		<div class="modal-body">
+			<p></p>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+		</div>
+	</div>
+
+	<!-- Le javascript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="../../jquery-ui-1.11.4/jquery-1.11.3.min.js"></script>
+	<script src="../../bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../jsrender/jsrender.min.js">
+		
+	</script>
+	<script
+		src="../../bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js"></script>
+	<script
+		src="../../bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+	<script src="../../javascript/tools.js"></script>
+	<script src="../../javascript/searchfeedback.js"></script>
+</body>
+</html>

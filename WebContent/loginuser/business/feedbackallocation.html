@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>派单反馈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+#footer {
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	height: 30px;
+	width: 100%;
+	background: #DDDDDD;
+}
+      @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+    </style>
+    <link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../bootstrap/js/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" id="homepage_a" href="searchallocation.html">首页</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+                                          登录用户： <a href="#" class="navbar-link"></a>
+            </p>
+            <ul class="nav">
+              <li class="active"><a href="#">派单反馈</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid" >
+      <div class="row-fluid">
+        <div class="span2">派单人员所属班组</div>
+        <div class="span2">派单人员</div>
+        <div class="span2">市/县区</div>
+        <div class="span2">具体营业厅</div>
+        <div class="span2">电话预约时间</div>
+        <div class="span2">用户号码</div>
+      </div>
+      <div class="row-fluid">
+        <div class="span2"><input type="text" class="input-medium" id="paidanrenyuansuoshubanzu_input" disabled></div>
+        <div class="span2"><input type="text" class="input-medium" id="paidanrenyuan_input" disabled></div>
+        <div class="span2"><input type="text" class="input-medium" id="shixianqu_input" disabled></div>
+        <div class="span2"><input type="text" class="input-medium" id="jutiyingyeting_input" disabled></div>
+        <div class="span2"><input type="text" class="input-medium" id="dianhuayuyueshijian_input" disabled></div>
+        <div class="span2"><input type="text" class="input-medium" id="yonghuhaoma_input" disabled></div>
+      </div>
+      <div class="row-fluid">
+        <div class="span2">用户姓名</div>
+        <div class="span2">现使用资费</div>
+        <div class="span2">会员等级</div>
+        <div class="span2">推荐产品</div>
+        <div class="span2">预到厅办理时间</div>
+        <div class="span2">客户经理</div>
+      </div>
+      <div class="row-fluid">
+        <div class="span2"><input type="text" class="input-medium" id="yonghuxingming_input" disabled></div>
+        <div class="span2"><input type="text" class="input-medium" id="xianshiyongzifei_input" disabled></div>
+        <div class="span2"><input type="text" class="input-medium" id="huiyuandengji_input" disabled></div>
+        <div class="span2"><input type="text" class="input-medium" id="tuijianchanpin_input" disabled></div>
+        <div class="span2"><input type="text" class="input-medium" id="yudaotingbanlishijian_input" disabled></div>
+        <div class="span2"><input type="text" class="input-medium" id="kehujingli_input" disabled></div>
+      </div>
+      <div class="row-fluid">
+        <div class="span2">短信编码</div>
+        <div class="span2">备注</div>
+      </div>
+      <div class="row-fluid">
+        <div class="span2"><input type="text" class="input-medium" id="duanxinbianma_input" disabled></div>
+        <div class="span2"><input type="text" class="input-medium" id="waihubeizhu_input" disabled></div>
+      </div>
+      
+      <hr>
+      
+      <div class="row-fluid">
+        <div class="span2">用户是否到厅</div>
+        <div class="span2">客户是否办理预约业务</div>
+        <div class="span2">用户成功办理业务</div>
+        <div class="span2">办理时间</div>
+        <div class="span2">操作员姓名</div>
+        <div class="span2">用户不办理原因</div>
+      </div>
+      <div class="row-fluid">
+        <div class="span2"><input type="text" class="input-medium" id="yonghushifoudaoting_input"></div>
+        <div class="span2"><input type="text" id="kehushifoubanliyuyueyewu_input" class="input-medium"></div>
+        <div class="span2"><input type="text" id="yonghuchenggongbanliyewu_input" class="input-medium"></div>
+        <div class="span2"><input type="text" class="input-medium" id="banlishijian_input"></div>
+        <div class="span2"><input type="text" class="input-medium" id="caozuoyuanxingming_input"></div>
+        <div class="span2"><input type="text" class="input-medium" id="yonghububanliyuanyin_input"></div>
+      </div>
+      <div class="row-fluid">
+        <div class="span2">短信编码（未在本预约表中的客户）</div>
+        <div class="span2">备注</div>
+      </div>
+      <div class="row-fluid">
+        <div class="span2"><input type="text" class="input-medium" id="duanxinbianmabiaowaikehu_input"></div>
+        <div class="span2"><input type="text" class="input-medium" id="yingyebeizhu_input"></div>
+      </div>
+
+      <hr>
+      <div class="row-fluid">
+			<div class="span3 offset2">
+				<button class="btn btn-primary" id="feedbackallocation_button"
+					type="button">确定</button>
+			</div>
+			<div class="span3">
+				<button class="btn" id="cancel_button" type="button">取消</button>
+			</div>
+		</div>
+
+      <div class="row-fluid" id="footer">
+			<div class="span6 offset2">
+				&nbsp;使用Chrome、 Internet Explorer 11、Internet
+				Explorer 10浏览效果更好
+			</div>
+		</div>
+
+    </div><!--/.fluid-container-->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">提示</h3>
+      </div>
+      <div class="modal-body">
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../jquery-ui-1.11.4/jquery-1.11.3.min.js"></script>
+    <script src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../jsrender/jsrender.min.js"> </script>
+    <script src="../../bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../../javascript/tools.js"></script>
+    <script src="../../javascript/feedbackallocation.js"></script>
+  </body>
+</html>

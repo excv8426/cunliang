@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>外呼</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Le styles -->
+<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../css/layout.css" rel="stylesheet">
+<style type="text/css">
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+.sidebar-nav {
+	padding: 9px 0;
+}
+
+#footer {
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	height: 30px;
+	width: 100%;
+	background: #DDDDDD;
+}
+
+@media ( max-width : 980px) {
+	/* Enable use of floated navbar text */
+	.navbar-text.pull-right {
+		float: none;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
+</style>
+<link href="../../bootstrap/css/bootstrap-responsive.min.css"
+	rel="stylesheet">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="../../bootstrap/js/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse"
+					data-target=".nav-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="brand" id="homepage_a" href="searchclient.html">首页</a>
+				<div class="nav-collapse collapse">
+					<p class="navbar-text pull-right">
+						登录用户：<a href="#" class="navbar-link"></a>
+					</p>
+					<ul class="nav">
+						<li class="active"><a href="#">客户信息</a></li>
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid" id="singleclientinfocontainer">
+
+		<div class="row-fluid" style="background-color: #CC0000;">
+			<div class="span3 offset5">
+				<h3 style="font-family: KaiTi;">基础信息</h3>
+			</div>
+		</div>
+
+		<div class="redborder">
+			<div class="row-fluid">
+				<div class="span1 textalignright ">客户姓名：</div>
+				<div class="span2">{{:kehuxingming}}</div>
+				<div class="span1 textalignright ">电话号码：</div>
+				<div class="span2">{{:dianhuahaoma}}</div>
+				<div class="span1 textalignright ">客户类型：</div>
+				<div class="span2">{{:kehuleixing}}</div>
+				<div class="span1 textalignright ">区县：</div>
+				<div class="span2">{{:quxian}}</div>
+
+			</div>
+			<div class="row-fluid">
+				<div class="span1 textalignright ">数据来源：</div>
+				<div class="span2">{{:shujulaiyuan}}</div>
+				<div class="span1 textalignright ">员工：</div>
+				<div class="span2">{{:shifouyuangong}}</div>
+				<div class="span1 textalignright ">两月内外呼：</div>
+				<div class="span2">{{:jinlianggeyuewaihuguo}}</div>
+				<div class="span1 textalignright ">专属终端：</div>
+				<div class="span2">{{:shifouzhuanshuzhongduan}}</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row-fluid">
+			<div class="span6">
+				<div class="row-fluid" style="background-color: #CC0000;">
+					<div class="span3 offset5">
+						<h3 style="font-family: KaiTi;">业务信息</h3>
+					</div>
+				</div>
+				<div class="redborder">
+					<div class="row-fluid">
+						<div class="span3 textalignright">渠道类型：</div>
+						<div class="span3">{{:qudaoleixing}}</div>
+						<div class="span3 textalignright">渠道：</div>
+						<div class="span3">{{:qudao}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">开户日期：</div>
+						<div class="span3">{{:kaihuriqi}}</div>
+						<div class="span3 textalignright">预判结果：</div>
+						<div class="span3">{{:yupanjieguo}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">全网业务类型：</div>
+						<div class="span3">{{:quanwangyewuleixing}}</div>
+						<div class="span3 textalignright">产品：</div>
+						<div class="span3">{{:chanpinbaohancbss}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">月租费（3G）：</div>
+						<div class="span3">{{:yuezufei3g}}</div>
+						<div class="span3 textalignright">套内含语音（3G：</div>
+						<div class="span3">{{:taoneihanyuyin3g}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">套内含流量（3G）：</div>
+						<div class="span3">{{:taoneihanliuliang3g}}</div>
+						<div class="span3 textalignright">套内含语音（4G）：</div>
+						<div class="span3">{{:taoneihanyuyin4g}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">套内含流量（4G））：</div>
+						<div class="span3">{{:taoneihanliuliang4g}}</div>
+						<div class="span3 textalignright">合约类型：</div>
+						<div class="span3">{{:heyueleixing}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">合约生效时间：</div>
+						<div class="span3">{{:heyueshengxiaoshijian}}</div>
+						<div class="span3 textalignright">合约失效时间：</div>
+						<div class="span3">{{:heyueshixiaoshijian}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">非实名制标识：</div>
+						<div class="span3">{{:feishimingzhibiaozhi}}</div>
+						<div class="span3 textalignright">是否融合：</div>
+						<div class="span3">{{:shifouronghe}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">融合类型：</div>
+						<div class="span3">{{:rongheleixing}}</div>
+						<div class="span3 textalignright">融合类型1：</div>
+						<div class="span3">{{:rongheleixing1}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">营业厅名称：</div>
+						<div class="span3">{{:yingyetingmingcheng}}</div>
+						<div class="span3 textalignright">营业厅地址：</div>
+						<div class="span3">{{:yingyetingdizhi}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span12">
+							<button class="btn btn-link btn-block">终端参数</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="span6">
+				<div class="row-fluid" style="background-color: #CC0000;">
+					<div class="span3 offset5">
+						<h3 style="font-family: KaiTi;">使用信息</h3>
+					</div>
+				</div>
+				<div class="redborder">
+					<div class="row-fluid">
+						<div class="span3 textalignright">用户状态：</div>
+						<div class="span3">{{:yonghuzhuangtai}}</div>
+						<div class="span3 textalignright">上次换机月份：</div>
+						<div class="span3">{{:shangcihuanjiyuefen}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">在网时长：</div>
+						<div class="span3">{{:zaiwangshichang}}</div>
+						<div class="span3 textalignright">主叫计费时长：</div>
+						<div class="span3">{{:zhujiaojifeishichang}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">流量：</div>
+						<div class="span3">{{:liuliang}}</div>
+						<div class="span3 textalignright">固网：本地通话费，G网：市话费 分摊前：</div>
+						<div class="span3">{{:guwangbenditonghuafei}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">长途费（分摊前）：</div>
+						<div class="span3">{{:changtufeifentanqian}}</div>
+						<div class="span3 textalignright">漫游费（分摊前）：</div>
+						<div class="span3">{{:manyoufeifentanqian}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">短信费（分摊前）：</div>
+						<div class="span3">{{:duanxinfeifentanqian}}</div>
+						<div class="span3 textalignright">GPRS费（分摊前）：</div>
+						<div class="span3">{{:gprsfeifentanqian}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">分摊前收入：</div>
+						<div class="span3">{{:fentanqianshouru}}</div>
+						<div class="span3 textalignright">费用合计：固网：本地通话费，G网：市话费 分摊前：</div>
+						<div class="span3">{{:feiyonghejigsmguwang}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">语音饱和度（3G）：</div>
+						<div class="span3">{{:yuyinbaohedu3g}}</div>
+						<div class="span3 textalignright">流量饱和度（3G）：</div>
+						<div class="span3">{{:liuliangbaohedu3g}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">语音饱和度（4G）：</div>
+						<div class="span3">{{:yuyinbaohedu4g}}</div>
+						<div class="span3 textalignright">流量饱和度（4G）：</div>
+						<div class="span3">{{:liuliangbaohedu4g}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span12">
+							<button class="btn btn-link btn-block">优惠信息</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<hr>
+		<div class="row-fluid" style="background-color: #CC0000;">
+			<div class="span3 offset5">
+				<h3 style="font-family: KaiTi;">推荐策略</h3>
+			</div>
+		</div>
+		<div class="redborder">
+			<div class="row-fluid">
+				<div class="span2 offset1">
+					<h4 style="font-family: KaiTi;">{{:tuijianzhengce}}</h4>
+				</div>
+
+			</div>
+		</div>
+
+		<hr>
+		<div class="row-fluid">
+			<div class="span1 offset4">
+				<button class="btn btn-primary" id="feedback_button" type="button">填写反馈</button>
+			</div>
+		</div>
+		<div class="row-fluid" id="footer">
+			<div class="span6 offset2">&nbsp;使用Chrome、 Internet Explorer
+				11、Internet Explorer 10浏览效果更好</div>
+		</div>
+	</div>
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"
+				aria-hidden="true">×</button>
+			<h3 id="myModalLabel">提示</h3>
+		</div>
+		<div class="modal-body">
+			<table class="table table-hover">
+			    <tr><td>终端厂商ID:</td><td>{{:zhongduanchangshangid}}</td><td>网络制式:</td><td>{{:wangluozhishi}}</td></tr>
+			    <tr><td>操作系统:</td><td>{{:caozuoxitong}}</td><td>终端价格:</td><td>{{:zhongduanjiage}}</td></tr>
+			    <tr><td>主屏尺寸:</td><td>{{:zhupingchicun}}</td><td>CPU核数:</td><td>{{:cpuheshu}}</td></tr>
+			    <tr><td>RAM容量:</td><td>{{:ramrongliang}}</td><td>是否双卡:</td><td>{{:shifoushuangka}}</td></tr>
+			    <tr><td>终端上市时间:</td><td>{{:zhongduanshangshishijian}}</td></tr>
+			</table>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+		</div>
+	</div>
+	<script id="clienttemplate" type="text/x-jsrender">
+        <div class="row-fluid" style="background-color: #CC0000;">
+			<div class="span3 offset5">
+				<h3 style="font-family: KaiTi;">基础信息</h3>
+			</div>
+		</div>
+
+		<div class="redborder">
+			<div class="row-fluid">
+				<div class="span1 textalignright ">客户姓名：</div>
+				<div class="span2">{{:kehuxingming}}</div>
+				<div class="span1 textalignright ">电话号码：</div>
+				<div class="span2">{{:dianhuahaoma}}</div>
+				<div class="span1 textalignright ">客户类型：</div>
+				<div class="span2">{{:kehuleixing}}</div>
+				<div class="span1 textalignright ">区县：</div>
+				<div class="span2">{{:quxian}}</div>
+
+			</div>
+			<div class="row-fluid">
+				<div class="span1 textalignright ">数据来源：</div>
+				<div class="span2">{{:shujulaiyuan}}</div>
+				<div class="span1 textalignright ">员工：</div>
+				<div class="span2">{{:shifouyuangong}}</div>
+				<div class="span1 textalignright ">两月内外呼：</div>
+				<div class="span2">{{:jinlianggeyuewaihuguo}}</div>
+				<div class="span1 textalignright ">专属终端：</div>
+				<div class="span2">{{:shifouzhuanshuzhongduan}}</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row-fluid">
+			<div class="span6">
+				<div class="row-fluid" style="background-color: #CC0000;">
+					<div class="span3 offset5">
+						<h3 style="font-family: KaiTi;">业务信息</h3>
+					</div>
+				</div>
+				<div class="redborder">
+					<div class="row-fluid">
+						<div class="span3 textalignright">渠道类型：</div>
+						<div class="span3">{{:qudaoleixing}}</div>
+						<div class="span3 textalignright">渠道：</div>
+						<div class="span3">{{:qudao}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">开户日期：</div>
+						<div class="span3">{{:kaihuriqi}}</div>
+						<div class="span3 textalignright">预判结果：</div>
+						<div class="span3">{{:yupanjieguo}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">全网业务类型：</div>
+						<div class="span3">{{:quanwangyewuleixing}}</div>
+						<div class="span3 textalignright">产品：</div>
+						<div class="span3">{{:chanpinbaohancbss}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">月租费（3G）：</div>
+						<div class="span3">{{:yuezufei3g}}</div>
+						<div class="span3 textalignright">套内含语音（3G：</div>
+						<div class="span3">{{:taoneihanyuyin3g}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">套内含流量（3G）：</div>
+						<div class="span3">{{:taoneihanliuliang3g}}</div>
+						<div class="span3 textalignright">套内含语音（4G）：</div>
+						<div class="span3">{{:taoneihanyuyin4g}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">套内含流量（4G））：</div>
+						<div class="span3">{{:taoneihanliuliang4g}}</div>
+						<div class="span3 textalignright">合约类型：</div>
+						<div class="span3">{{:heyueleixing}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">合约生效时间：</div>
+						<div class="span3">{{:heyueshengxiaoshijian}}</div>
+						<div class="span3 textalignright">合约失效时间：</div>
+						<div class="span3">{{:heyueshixiaoshijian}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">非实名制标识：</div>
+						<div class="span3">{{:feishimingzhibiaozhi}}</div>
+						<div class="span3 textalignright">是否融合：</div>
+						<div class="span3">{{:shifouronghe}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">融合类型：</div>
+						<div class="span3">{{:rongheleixing}}</div>
+						<div class="span3 textalignright">融合类型1：</div>
+						<div class="span3">{{:rongheleixing1}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">营业厅名称：</div>
+						<div class="span3">{{:yingyetingmingcheng}}</div>
+						<div class="span3 textalignright">营业厅地址：</div>
+						<div class="span3">{{:yingyetingdizhi}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span12">
+							<button class="btn btn-link btn-block" id="terminalinformation">终端参数</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="span6">
+				<div class="row-fluid" style="background-color: #CC0000;">
+					<div class="span3 offset5">
+						<h3 style="font-family: KaiTi;">使用信息</h3>
+					</div>
+				</div>
+				<div class="redborder">
+					<div class="row-fluid">
+						<div class="span3 textalignright">用户状态：</div>
+						<div class="span3">{{:yonghuzhuangtai}}</div>
+						<div class="span3 textalignright">上次换机月份：</div>
+						<div class="span3">{{:shangcihuanjiyuefen}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">在网时长：</div>
+						<div class="span3">{{:zaiwangshichang}}</div>
+						<div class="span3 textalignright">主叫计费时长：</div>
+						<div class="span3">{{:zhujiaojifeishichang}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">流量：</div>
+						<div class="span3">{{:liuliang}}</div>
+						<div class="span3 textalignright">固网：本地通话费，G网：市话费 分摊前：</div>
+						<div class="span3">{{:guwangbenditonghuafei}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">长途费（分摊前）：</div>
+						<div class="span3">{{:changtufeifentanqian}}</div>
+						<div class="span3 textalignright">漫游费（分摊前）：</div>
+						<div class="span3">{{:manyoufeifentanqian}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">短信费（分摊前）：</div>
+						<div class="span3">{{:duanxinfeifentanqian}}</div>
+						<div class="span3 textalignright">GPRS费（分摊前）：</div>
+						<div class="span3">{{:gprsfeifentanqian}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">分摊前收入：</div>
+						<div class="span3">{{:fentanqianshouru}}</div>
+						<div class="span3 textalignright">费用合计：固网：本地通话费，G网：市话费 分摊前：</div>
+						<div class="span3">{{:feiyonghejigsmguwang}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">语音饱和度（3G）：</div>
+						<div class="span3">{{:yuyinbaohedu3g}}</div>
+						<div class="span3 textalignright">流量饱和度（3G）：</div>
+						<div class="span3">{{:liuliangbaohedu3g}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3 textalignright">语音饱和度（4G）：</div>
+						<div class="span3">{{:yuyinbaohedu4g}}</div>
+						<div class="span3 textalignright">流量饱和度（4G）：</div>
+						<div class="span3">{{:liuliangbaohedu4g}}</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span12">
+							<button class="btn btn-link btn-block" id="discountinformation">优惠信息</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<hr>
+		<div class="row-fluid" style="background-color: #CC0000;">
+			<div class="span3 offset5">
+				<h3 style="font-family: KaiTi;">推荐策略</h3>
+			</div>
+		</div>
+		<div class="redborder">
+			<div class="row-fluid">
+				<div class="span2 offset1">
+					<h4 style="font-family: KaiTi;">{{:tuijianzhengce}}</h4>
+				</div>
+
+			</div>
+		</div>
+
+		<hr>
+		<div class="row-fluid">
+			<div class="span1 offset4">
+				<button class="btn btn-primary" id="feedback_button" type="button">填写反馈</button>
+			</div>
+		</div>
+		<div class="row-fluid" id="footer">
+			<div class="span6 offset2">&nbsp;使用Chrome、 Internet Explorer
+				11、Internet Explorer 10浏览效果更好</div>
+		</div>
+    </script>
+	<!--/.fluid-container-->
+
+	<!-- Le javascript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script type="text/javascript"
+		src="../../jquery-ui-1.11.4/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript"
+		src="../../bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../jsrender/jsrender.min.js">
+		
+	</script>
+	<script type="text/javascript" src="../../javascript/tools.js"></script>
+	<script type="text/javascript" src="../../javascript/singleclient.js"></script>
+</body>
+</html>

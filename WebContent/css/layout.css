@@ -1,0 +1,9 @@
+.redborder {
+  border-style: solid; 
+  border-color: #000000; 
+  border-width: 2px;
+}
+.textalignright {
+	text-align: right;
+}
+
