@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -29,18 +28,10 @@ public class LoginuserController {
 	@Autowired
 	private HttpServletRequest httpServletRequest;
 	
-	private HttpSession session;
-	
-	private Map<String, Object> map;
-	
-	@ModelAttribute
-	public void init(){
-		map=new HashMap<>();
-	}
-	
 	@RequestMapping("loginuser/system/addLoginuser")
 	@ResponseBody
 	public Map<String, Object> addLoginuser(Loginuser loginuser){
+		Map<String, Object> map=new HashMap<>();
 		if (ObjectUtils.nullpropertycount(loginuser)<=3) {
 			loginuserService.addLoginuser(loginuser);
 			map.put("success", "1");
@@ -53,6 +44,7 @@ public class LoginuserController {
 	@RequestMapping("checkLoginuser")
 	@ResponseBody
 	public Map<String, Object> checkLoginuser(Loginuser loginuser){
+		Map<String, Object> map=new HashMap<>();
 		String namepsd=loginuser.getLoginname()+loginuser.getPassword();
 		loginuser.setPassword(DigestUtils.md5DigestAsHex(namepsd.getBytes()));
 		Loginuser loginuser2=loginuserService.checkLoginuser(loginuser);
@@ -65,7 +57,7 @@ public class LoginuserController {
 		} else {
 			map.put("success", "success");
 			map.put("authority", loginuser2.getAuthority());
-			session=httpServletRequest.getSession(true);
+			HttpSession session=httpServletRequest.getSession(true);
 			session.setAttribute("loginname", loginuser2.getLoginname());
 			session.setAttribute("authority", loginuser2.getAuthority());
 			session.setAttribute("personname", loginuser2.getPersonname());
@@ -73,9 +65,18 @@ public class LoginuserController {
 		return map;
 	}
 	
+	@RequestMapping("resetpwd")
+	@ResponseBody
+	public Map<String, Object> resetPassword(Loginuser loginuser){
+		Map<String, Object> map=new HashMap<>();
+		map.put("success", loginuserService.updatepassword(loginuser));
+		return map;
+	}
+	
 	@RequestMapping("loginuser/system/addLoginusers")
 	@ResponseBody
 	public Map<String, Object> addLoginusers(@RequestParam("file") MultipartFile[] files){
+		Map<String, Object> map=new HashMap<>();
 		Integer count=0;
 		for (int i = 0; i < files.length; i++) {
 			try {
@@ -91,7 +92,8 @@ public class LoginuserController {
 	@RequestMapping("loginuser/default/updatepassword")
 	@ResponseBody
 	public Map<String, Object> updatepassword(Loginuser loginuser){
-		session=httpServletRequest.getSession(false);
+		Map<String, Object> map=new HashMap<>();
+		HttpSession session=httpServletRequest.getSession(false);
 		loginuser.setLoginname(session.getAttribute("loginname").toString());
 		if (loginuser.getPassword().trim().equals("")) {
 			map.put("error", "nullproperty");
@@ -117,6 +119,7 @@ public class LoginuserController {
 	@ExceptionHandler(Exception.class)
 	@ResponseBody
 	public Map<String, Object> exceptionhandler(Exception exception){
+		Map<String, Object> map=new HashMap<>();
 		String exceptionmessage="";
 		exception.printStackTrace();
 		Throwable cause=ObjectUtils.findcause(exception);
