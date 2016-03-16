@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -224,7 +225,7 @@ public class Client implements Serializable {
 	@Column(name="已反馈")
 	private String yifankui;
 	
-	@ManyToMany(targetEntity=Discount.class)
+	@ManyToMany(targetEntity=Discount.class,cascade={CascadeType.PERSIST})
 	@JoinTable(name="yonghu_youhui",joinColumns={@JoinColumn(name="dianhuahaoma",referencedColumnName="电话号码")},
 	inverseJoinColumns={@JoinColumn(name="youhuiid",referencedColumnName="youhuiid")})
 	private Set<Discount> discounts = new HashSet<Discount>();

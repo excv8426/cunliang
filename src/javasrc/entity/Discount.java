@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -40,7 +41,7 @@ public class Discount implements Serializable {
 	@Column(name="优惠失效时间")
 	private Date youhuishixiaoshijian;
 	
-	@ManyToMany(mappedBy="discounts",targetEntity=Client.class)
+	@ManyToMany(mappedBy="discounts",targetEntity=Client.class,cascade={CascadeType.PERSIST})
 	private Set<Client> clients=new HashSet<>();
 
 	public Integer getYouhuiid() {

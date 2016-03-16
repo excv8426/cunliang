@@ -10,6 +10,7 @@ import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +22,8 @@ import javasrc.entity.Clientstatistics;
 public class ClientDao {
 	@Autowired
 	private SessionFactory sessionFactory;
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
 	
 	/**
 	 * 按条件查询用户。
@@ -110,7 +113,9 @@ public class ClientDao {
 	
 	@Transactional(readOnly=false)
 	public Integer deletebywaihucelve(Client client){
-		Session session=sessionFactory.getCurrentSession();
+		String sql="delete from kehuxinxi where 外呼策略=?";
+		//级联删除异常
+		/*Session session=sessionFactory.getCurrentSession();
 		Query query=null;
 		String hql="";
 		if (client.getWaihucelve().equals("")) {
@@ -120,8 +125,8 @@ public class ClientDao {
 			hql="delete Client client where client.waihucelve=?";
 			query=session.createQuery(hql);
 			query.setString(0, client.getWaihucelve());
-		}
-		return query.executeUpdate();
+		}*/
+		return jdbcTemplate.update(sql, client.getWaihucelve());
 	}
 	
 	/**
