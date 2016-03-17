@@ -10,7 +10,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -25,19 +24,11 @@ public class AllocationController {
 	@Autowired
 	private HttpServletRequest httpServletRequest;
 	
-	private Map<String, Object> map;
-	
-	private HttpSession session;
-	
-	@ModelAttribute
-	public void init(){
-		session=httpServletRequest.getSession(false);
-		map=new HashMap<>();
-	}
-	
 	@RequestMapping("loginuser/default/saveorupdateAllocation")
 	@ResponseBody
 	public Map<String, Object> saveorupdateAllocation(Allocation allocation){
+		HttpSession session=httpServletRequest.getSession(false);
+		Map<String, Object> map=new HashMap<>();
 		allocation.setPaidanrenyuangonghao(session.getAttribute("loginname").toString());
 		String res=allocationService.saveorupdateAllocation(allocation);
 		if (res.equals("feedbacked")) {
@@ -51,6 +42,7 @@ public class AllocationController {
 	@RequestMapping("loginuser/default/getAllocations")
 	@ResponseBody
 	public List<Allocation> getAllocations(Allocation allocation){
+		HttpSession session=httpServletRequest.getSession(false);
 		if (session.getAttribute("authority").equals("2")) {
 			allocation.setPaidanrenyuangonghao(session.getAttribute("loginname").toString());
 		}
@@ -60,6 +52,7 @@ public class AllocationController {
 	@RequestMapping("loginuser/default/getAllocationscount")
 	@ResponseBody
 	public Integer getAllocationscount(Allocation allocation){
+		HttpSession session=httpServletRequest.getSession(false);
 		if (session.getAttribute("authority").equals("2")) {
 			allocation.setPaidanrenyuangonghao(session.getAttribute("loginname").toString());
 		}
@@ -69,6 +62,8 @@ public class AllocationController {
 	@RequestMapping("loginuser/default/feedbackAllocation")
 	@ResponseBody
 	public Map<String, Object> feedbackAllocation(Allocation allocation){
+		HttpSession session=httpServletRequest.getSession(false);
+		Map<String, Object> map=new HashMap<>();
 		allocation.setFankuirenyuangonghao(session.getAttribute("loginname").toString());
 		String res=allocationService.feedbackAllocation(allocation);
 		if (res.equals("can not modify others feedbackAllocation")) {
@@ -83,6 +78,7 @@ public class AllocationController {
 	@RequestMapping("loginuser/default/extractAllocation")
 	@ResponseBody
 	public String extractAllocation(Allocation allocation){
+		HttpSession session=httpServletRequest.getSession(false);
 		if (session.getAttribute("authority").equals("2")) {
 			allocation.setPaidanrenyuangonghao(session.getAttribute("loginname").toString());
 		}
@@ -92,6 +88,7 @@ public class AllocationController {
 	@ExceptionHandler(Exception.class)
 	@ResponseBody
 	public Map<String, Object> exceptionhandler(Exception exception){
+		Map<String, Object> map=new HashMap<>();
 		String exceptionmessage="";
 		exception.printStackTrace();
 		Throwable cause=ObjectUtils.findcause(exception);

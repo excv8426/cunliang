@@ -10,7 +10,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -25,19 +24,10 @@ public class FeedbackController {
 	@Autowired
 	private HttpServletRequest httpServletRequest;
 	
-	private HttpSession session;
-	
-	private Map<String, Object> map;
-	
-	@ModelAttribute
-	public void init(){
-		map=new HashMap<>();
-		session=httpServletRequest.getSession(false);
-	}
-	
 	@RequestMapping("loginuser/adminmanager/getFeedbacks")
 	@ResponseBody
 	public List<Feedback> getFeedbacks(Feedback feedback){
+		HttpSession session=httpServletRequest.getSession(false);
 		if (session.getAttribute("authority").equals("2")) {
 			feedback.setFankuirenyuangonghao(session.getAttribute("loginname").toString());
 		}
@@ -47,6 +37,7 @@ public class FeedbackController {
 	@RequestMapping("loginuser/adminmanager/getFeedbackscount")
 	@ResponseBody
 	public Integer getFeedbackscount(Feedback feedback){
+		HttpSession session=httpServletRequest.getSession(false);
 		if (session.getAttribute("authority").equals("2")) {
 			feedback.setFankuirenyuangonghao(session.getAttribute("loginname").toString());
 		}
@@ -56,6 +47,7 @@ public class FeedbackController {
 	@RequestMapping("loginuser/adminmanager/extractFeedback")
 	@ResponseBody
 	public String extractFeedback(Feedback feedback){
+		HttpSession session=httpServletRequest.getSession(false);
 		if (session.getAttribute("authority").equals("2")) {
 			feedback.setFankuirenyuangonghao(session.getAttribute("loginname").toString());
 		}
@@ -65,6 +57,8 @@ public class FeedbackController {
 	@RequestMapping("loginuser/adminmanager/saveorupdateFeedback")
 	@ResponseBody
 	public Map<String, Object> saveorupdateFeedback(Feedback feedback){
+		HttpSession session=httpServletRequest.getSession(false);
+		Map<String, Object> map=new HashMap<>();
 		feedback.setFankuirenyuangonghao(session.getAttribute("loginname").toString());
 		String rs=feedbackService.saveorupdateFeedback(feedback);
 		if (rs.equals("can not modify others feedback")) {
@@ -78,6 +72,8 @@ public class FeedbackController {
 	@RequestMapping("loginuser/adminmanager/callbyClient")
 	@ResponseBody
 	public Map<String, Object> callbyClient(Feedback feedback){
+		HttpSession session=httpServletRequest.getSession(false);
+		Map<String, Object> map=new HashMap<>();
 		feedback.setFankuirenyuangonghao(session.getAttribute("loginname").toString());
 		String key=feedbackService.callbyClient(feedback);
 		map.put("success", key);
@@ -87,6 +83,7 @@ public class FeedbackController {
 	@ExceptionHandler(Exception.class)
 	@ResponseBody
 	public Map<String, Object> exceptionhandler(Exception exception){
+		Map<String, Object> map=new HashMap<>();
 		String exceptionmessage="";
 		exception.printStackTrace();
 		Throwable cause=ObjectUtils.findcause(exception);

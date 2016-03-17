@@ -7,7 +7,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -20,13 +19,6 @@ public class DiscountController {
 	@Autowired
 	private DiscountService discountService;
 	
-	private Map<String, Object> map;
-	
-	@ModelAttribute
-	public void init(){
-		map=new HashMap<>();
-	}
-	
 	@RequestMapping("loginuser/default/getDiscounts")
 	@ResponseBody
 	public List<Discount> getDiscounts(Discount discount){
@@ -36,6 +28,7 @@ public class DiscountController {
 	@RequestMapping("loginuser/system/reorganizeDiscounts")
 	@ResponseBody
 	public Map<String, Object> reorganizeDiscounts(){
+		Map<String, Object> map=new HashMap<>();
 		Integer s=discountService.reorganizeDiscounts();
 		map.put("success", s);
 		return map;
@@ -44,6 +37,7 @@ public class DiscountController {
 	@RequestMapping("loginuser/system/updateDiscountrelation")
 	@ResponseBody
 	public Map<String, Object> updateDiscountrelation(){
+		Map<String, Object> map=new HashMap<>();
 		Integer s=discountService.updateDiscountrelation();
 		map.put("success", s);
 		return map;
@@ -52,6 +46,7 @@ public class DiscountController {
 	@ExceptionHandler(Exception.class)
 	@ResponseBody
 	public Map<String, Object> exceptionhandler(Exception exception){
+		Map<String, Object> map=new HashMap<>();
 		String exceptionmessage="";
 		exception.printStackTrace();
 		Throwable cause=ObjectUtils.findcause(exception);

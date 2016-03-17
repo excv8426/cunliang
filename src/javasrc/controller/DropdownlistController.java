@@ -7,7 +7,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -20,13 +19,6 @@ import javasrc.service.DropdownlistService;
 public class DropdownlistController {
 	@Autowired
 	private DropdownlistService dropdownlistService;
-	
-	private Map<String, Object> map;
-	
-	@ModelAttribute
-	public void init(){
-		map=new HashMap<>();
-	}
 	
 	@RequestMapping("loginuser/default/getYujingcelves")
 	@ResponseBody
@@ -67,6 +59,7 @@ public class DropdownlistController {
 	@ExceptionHandler(Exception.class)
 	@ResponseBody
 	public Map<String, Object> exceptionhandler(Exception exception){
+		Map<String, Object> map=new HashMap<>();
 		String exceptionmessage="";
 		exception.printStackTrace();
 		Throwable cause=ObjectUtils.findcause(exception);

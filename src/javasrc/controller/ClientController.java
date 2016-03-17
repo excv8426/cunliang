@@ -7,7 +7,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -21,16 +20,10 @@ public class ClientController {
 	@Autowired
 	private HttpServletRequest httpServletRequest;
 	
-	private HttpSession session;
-	
-	@ModelAttribute
-	public void initloginuser(){
-		session=httpServletRequest.getSession(false);
-	}
-	
 	@RequestMapping("loginuser/default/getClients")
 	@ResponseBody
 	public List<Client> getClients(Client client){
+		HttpSession session=httpServletRequest.getSession(false);
 		if (session.getAttribute("authority").equals("2")) {
 			client.setKehujingli(session.getAttribute("personname").toString());
 		}
@@ -40,6 +33,7 @@ public class ClientController {
 	@RequestMapping("loginuser/default/getClientscount")
 	@ResponseBody
 	public Integer getClientscount(Client client){
+		HttpSession session=httpServletRequest.getSession(false);
 		if (session.getAttribute("authority").equals("2")) {
 			client.setKehujingli(session.getAttribute("personname").toString());
 		}
@@ -49,6 +43,7 @@ public class ClientController {
 	@RequestMapping("loginuser/default/extractClient")
 	@ResponseBody
 	public String extractClient(Client client){
+		HttpSession session=httpServletRequest.getSession(false);
 		if (session.getAttribute("authority").equals("2")) {
 			client.setKehujingli(session.getAttribute("personname").toString());
 		}
