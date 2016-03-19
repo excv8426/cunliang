@@ -18,6 +18,8 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 
+import javasrc.component.ExportedObject;
+
 public class ExcelService {
 	public static String webcontentpath=""; 
 	/**
@@ -69,6 +71,60 @@ public class ExcelService {
 				e.printStackTrace();
 			}
 			try {
+				wb.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return "/temporary/"+filename;
+	}
+	
+	
+	public static String createexcel(ExportedObject exportedObject,String[] title){
+		List<List<String>> data=null;
+		String filepath="temporary/";
+		String filename=UUID.randomUUID().toString()+".xlsx";
+		filepath=filepath+filename;
+		filepath=webcontentpath+filepath;
+		File excelfile=new File(filepath);
+		FileOutputStream out=null;
+		try {
+			excelfile.createNewFile();
+			out = new FileOutputStream(filepath);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		SXSSFWorkbook wb=new SXSSFWorkbook(1000);
+		Sheet s = wb.createSheet();
+		Row r = null;
+		Cell c = null;
+		r=s.createRow(0);
+		for (int i = 0; i < title.length; i++) {
+			c=r.createCell(i);
+			c.setCellType(Cell.CELL_TYPE_STRING);
+			c.setCellValue(title[i]);
+		}
+		while (exportedObject.haveNext()) {
+			data=exportedObject.getData();
+			for (int i = 0; i < data.size(); i++) {
+				r=s.createRow(i+1);
+				for (int j = 0; j < data.get(i).size(); j++) {
+					c=r.createCell(j);
+					c.setCellType(Cell.CELL_TYPE_STRING);
+					c.setCellValue(data.get(i).get(j));
+				}
+			}
+		}
+
+		try {
+			wb.write(out);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				out.close();
 				wb.close();
 			} catch (IOException e) {
 				e.printStackTrace();
