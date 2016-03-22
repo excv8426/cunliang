@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import javasrc.dao.ClientDao;
 import javasrc.entity.Client;
 
@@ -13,6 +12,7 @@ public class ExportedClient implements ExportedObject {
 	private int currentpage=0;
 	private int size=0;
 	private Client selectparam;
+	
 	@Autowired
 	private ClientDao clientDao;
 	
