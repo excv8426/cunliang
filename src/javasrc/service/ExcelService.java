@@ -81,6 +81,7 @@ public class ExcelService {
 	
 	
 	public static String createexcel(ExportedObject exportedObject,String[] title){
+		int Startrownum=0;
 		List<List<String>> data=null;
 		String filepath="temporary/";
 		String filename=UUID.randomUUID().toString()+".xlsx";
@@ -107,9 +108,10 @@ public class ExcelService {
 			c.setCellValue(title[i]);
 		}
 		while (exportedObject.haveNext()) {
+			Startrownum=exportedObject.getStartrownum();
 			data=exportedObject.getData();
 			for (int i = 0; i < data.size(); i++) {
-				r=s.createRow(i+1);
+				r=s.createRow(i+1+Startrownum);
 				for (int j = 0; j < data.get(i).size(); j++) {
 					c=r.createCell(j);
 					c.setCellType(Cell.CELL_TYPE_STRING);

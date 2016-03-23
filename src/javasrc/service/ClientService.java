@@ -1,15 +1,11 @@
 package javasrc.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.stereotype.Service;
 
-import javasrc.component.ExportedClient;
-import javasrc.component.ObjectUtils;
+import javasrc.component.ExportedClientFactory;
 import javasrc.dao.ClientDao;
 import javasrc.entity.Client;
 import javasrc.entity.Clientstatistics;
@@ -20,7 +16,7 @@ public class ClientService {
 	@Autowired
 	private ClientDao clientDao;
 	@Autowired
-	private AutowireCapableBeanFactory autowireCapableBeanFactory;
+	private ExportedClientFactory exportedClientFactory;
 	
 	public List<Client> getClients(Client client){
 		return clientDao.getClients(client);
@@ -47,15 +43,13 @@ public class ClientService {
 	}
 	
 	public String extractClient(Client client){
-		List<List<String>> list=new ArrayList<>();
+		/*List<List<String>> list=new ArrayList<>();
 		List<Client> clients=clientDao.extractClient(client);
 		for (int i = 0; i < clients.size(); i++) {
 			list.add(ObjectUtils.tolist(clients.get(i), 19));
 		}
-		String filepath=ExcelService.createexcel(list, clienttitle);
-		/*ExportedClient exportedClient=new ExportedClient(client);
-		autowireCapableBeanFactory.autowireBean(exportedClient);
-		String filepath=ExcelService.createexcel(exportedClient, clienttitle);*/
+		String filepath=ExcelService.createexcel(list, clienttitle);*/
+		String filepath=ExcelService.createexcel(exportedClientFactory.newExportedClient(client), clienttitle);
 		return filepath;
 	}
 }
