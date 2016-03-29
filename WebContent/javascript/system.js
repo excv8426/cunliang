@@ -4,6 +4,7 @@ var loginusertemplate='<tr>'+
     '<td>{{:loginname}}</td>'+
     '<td>{{:personname}}</td>'+
     '<td>{{:authority}}</td>'+
+    '<td><button class="btn btn-link btn-block">初始化密码</button></td>'+
     '</tr>';
 var searchloginuserparam={maxresult:15,
 		firstresult:0};
@@ -113,6 +114,38 @@ function getloginuserscount(){
 			}
 		}
 	});
+}
+function bindtablebutton(){
+	$("#loginuser_table").children("tbody").find("button").each(function(){
+		var loginname=$(this).parent().siblings().eq(0).text();
+		$(this).bind("click",function(){
+			alert(loginname);
+		});
+	});
+}
+function resetpassword(loginname){
+	var c=confirm("密码将被初始化为123456。");
+	if(c){
+		$.ajax({
+			cache:false,
+			async:true,
+			url : "resetpwd.do",
+			type : "POST",
+			data : {loginname:loginname},
+			dataType : "text",
+			success : function(data) {
+				if(hasauthority(data)){
+					data=$.parseJSON(data);
+					if((data.exception!=null)||(data.exception!=undefined)){
+						$("#myModal").find(".modal-body").find("p").html(data.exception);
+					}else{
+						$("#myModal").find(".modal-body").find("p").html(loginname+"的密码已被初始化为123456。");
+					}
+					$('#myModal').modal();
+				}
+			}
+		});
+	}
 }
 /**
  * 生成用户列表字符串。*/

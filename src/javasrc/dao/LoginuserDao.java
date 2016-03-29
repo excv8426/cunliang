@@ -64,11 +64,12 @@ public class LoginuserDao {
 	
 	@Transactional(readOnly=false)
 	public Integer updatepassword(Loginuser loginuser){
-		String hql="update Loginuser loginuser set loginuser.password=? where loginuser.loginname=?";
+		String hql="update Loginuser loginuser set loginuser.password=?,loginuser.errorcount=? where loginuser.loginname=?";
 		Session session=sessionFactory.getCurrentSession();
 		Query query=session.createQuery(hql);
 		query.setString(0, loginuser.getPassword());
-		query.setString(1, loginuser.getLoginname());
+		query.setInteger(1, 0);
+		query.setString(2, loginuser.getLoginname());
 		return query.executeUpdate();
 	}
 	
