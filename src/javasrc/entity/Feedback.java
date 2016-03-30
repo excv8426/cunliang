@@ -96,11 +96,7 @@ public class Feedback implements Serializable {
 	}
 
 	public String getBubanliyuanyin() {
-		if (bubanliyuanyin==null) {
-			return "";
-		} else {
-			return this.bubanliyuanyin;
-		}
+		return this.bubanliyuanyin;
 
 	}
 
@@ -109,12 +105,7 @@ public class Feedback implements Serializable {
 	}
 
 	public String getChenggongbanliyewu() {
-		if (chenggongbanliyewu==null) {
-			return "";
-		} else {
-			return this.chenggongbanliyewu;
-		}
-
+		return this.chenggongbanliyewu;
 	}
 
 	public void setChenggongbanliyewu(String chenggongbanliyewu) {
@@ -122,11 +113,7 @@ public class Feedback implements Serializable {
 	}
 
 	public String getHuifangqingkuang() {
-		if (huifangqingkuang==null) {
-			return "";
-		} else {
-			return this.huifangqingkuang;
-		}
+		return this.huifangqingkuang;
 	}
 
 	public void setHuifangqingkuang(String huifangqingkuang) {
@@ -134,11 +121,7 @@ public class Feedback implements Serializable {
 	}
 
 	public String getKehuyixiang() {
-		if (kehuyixiang==null) {
-			return "";
-		} else {
-			return this.kehuyixiang;
-		}
+		return this.kehuyixiang;
 	}
 
 	public void setKehuyixiang(String kehuyixiang) {
@@ -194,11 +177,7 @@ public class Feedback implements Serializable {
 	}
 
 	public String getWaihucelve() {
-		if (waihucelve==null) {
-			return "";
-		} else {
-			return this.waihucelve;
-		}
+		return this.waihucelve;
 	}
 
 	public void setWaihucelve(String waihucelve) {
@@ -206,11 +185,7 @@ public class Feedback implements Serializable {
 	}
 
 	public String getWaihuhaoma() {
-		if (waihuhaoma!=null) {
-			return this.waihuhaoma;
-		} else {
-			return "";
-		}
+		return this.waihuhaoma;
 	}
 
 	public void setWaihuhaoma(String waihuhaoma) {
@@ -218,11 +193,7 @@ public class Feedback implements Serializable {
 	}
 
 	public String getWaihujinglixingming() {
-		if (this.waihujinglixingming==null) {
-			return "";
-		} else {
-			return this.waihujinglixingming;
-		}
+		return this.waihujinglixingming;
 	}
 
 	public void setWaihujinglixingming(String waihujinglixingming) {
@@ -254,11 +225,7 @@ public class Feedback implements Serializable {
 	}
 
 	public String getYujingcelve() {
-		if (yujingcelve==null) {
-			return "";
-		} else {
-			return this.yujingcelve;
-		}
+		return this.yujingcelve;
 	}
 
 	public void setYujingcelve(String yujingcelve) {
@@ -283,11 +250,7 @@ public class Feedback implements Serializable {
 	}
 
 	public String getFankuirenyuangonghao() {
-		if (fankuirenyuangonghao==null) {
-			return "";
-		} else {
-			return fankuirenyuangonghao;
-		}
+		return fankuirenyuangonghao;
 	}
 
 	public void setFankuirenyuangonghao(String fankuirenyuangonghao) {
@@ -311,11 +274,7 @@ public class Feedback implements Serializable {
 	}
 
 	public Integer getFirstresult() {
-		if (firstresult==null) {
-			return 0;
-		} else {
-			return firstresult;
-		}
+		return firstresult;
 	}
 
 	public void setFirstresult(Integer firstresult) {

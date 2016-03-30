@@ -85,34 +85,34 @@ public class FeedbackDao {
 			criteria.add(Restrictions.idEq(feedback.getWaihufankuiid()));
 			return;
 		}
-		if (!feedback.getWaihuhaoma().equals("")) {
+		if (feedback.getWaihuhaoma()!=null) {
 			criteria.add(Restrictions.eq("waihuhaoma",feedback.getWaihuhaoma()));
 		}
-		if (!feedback.getWaihujinglixingming().equals("")) {
+		if (feedback.getWaihujinglixingming()!=null) {
 			criteria.add(Restrictions.or(Restrictions.eq("waihujinglixingming", feedback.getWaihujinglixingming()), Restrictions.isNull("waihujinglixingming")));
 		}
-		if (!feedback.getFankuirenyuangonghao().equals("")) {
+		if (feedback.getFankuirenyuangonghao()!=null) {
 			criteria.add(Restrictions.eq("fankuirenyuangonghao", feedback.getFankuirenyuangonghao()));
 		}
 		if ((feedback.getFankuiriqihi()!=null)&&(feedback.getFankuiriqilo()!=null)) {
 			criteria.add(Restrictions.between("fankuiriqi", feedback.getFankuiriqilo(), feedback.getFankuiriqihi()));
 		}
-		if (!feedback.getWaihucelve().equals("")) {
+		if (feedback.getWaihucelve()!=null) {
 			criteria.add(Restrictions.like("waihucelve", "%"+feedback.getWaihucelve()+"%"));
 		}
-		if (!feedback.getChenggongbanliyewu().equals("")) {
+		if (feedback.getChenggongbanliyewu()!=null) {
 			criteria.add(Restrictions.eq("chenggongbanliyewu", feedback.getChenggongbanliyewu()));
 		}
-		if (!feedback.getBubanliyuanyin().equals("")) {
+		if (feedback.getBubanliyuanyin()!=null) {
 			criteria.add(Restrictions.eq("bubanliyuanyin", feedback.getBubanliyuanyin()));
 		}
-		if (!feedback.getYujingcelve().equals("")) {
+		if (feedback.getYujingcelve()!=null) {
 			criteria.add(Restrictions.eq("yujingcelve", feedback.getYujingcelve()));
 		}
-		if (!feedback.getHuifangqingkuang().equals("")) {
+		if (feedback.getHuifangqingkuang()!=null) {
 			criteria.add(Restrictions.eq("huifangqingkuang", feedback.getHuifangqingkuang()));
 		}
-		if (!feedback.getKehuyixiang().equals("")) {
+		if (feedback.getKehuyixiang()!=null) {
 			criteria.add(Restrictions.eq("kehuyixiang", feedback.getKehuyixiang()));
 		}
 	}

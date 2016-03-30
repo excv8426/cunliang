@@ -26,17 +26,17 @@ var feedbacklistbodytemplate='<tr>'+
 
 /**
  * 外呼反馈查询条件。*/
-var searchfeedbackparam={waihujinglixingming:"",
-		waihucelve:"",
-		chenggongbanliyewu:"",
-		bubanliyuanyin:"",
-		yujingcelve:"",
-		huifangqingkuang:"",
-		kehuyixiang:"",
+var searchfeedbackparam={waihujinglixingming:null,
+		waihucelve:null,
+		chenggongbanliyewu:null,
+		bubanliyuanyin:null,
+		yujingcelve:null,
+		huifangqingkuang:null,
+		kehuyixiang:null,
 		maxresult:15,
 		firstresult:0,
-		fankuiriqilo:"",
-		fankuiriqihi:""
+		fankuiriqilo:null,
+		fankuiriqihi:null
 	};
 
 function setsearchfeedbackparam(){

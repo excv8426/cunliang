@@ -121,11 +121,7 @@ public class Allocation  implements Serializable {
 	}
 
 	public String getPaidanrenyuangonghao() {
-		if (paidanrenyuangonghao==null) {
-			return "";
-		} else {
-			return paidanrenyuangonghao;
-		}
+		return paidanrenyuangonghao;
 	}
 
 	public void setPaidanrenyuangonghao(String paidanrenyuangonghao) {
@@ -157,11 +153,7 @@ public class Allocation  implements Serializable {
 	}
 
 	public String getYifankui() {
-		if (yifankui==null) {
-			return "";
-		} else {
-			return yifankui;
-		}
+		return yifankui;
 	}
 
 	public void setYifankui(String yifankui) {
@@ -219,11 +211,7 @@ public class Allocation  implements Serializable {
 	}
 
 	public String getJutiyingyeting() {
-		if (jutiyingyeting!=null) {
-			return this.jutiyingyeting;
-		} else {
-			return "";
-		}
+		return this.jutiyingyeting;
 	}
 
 	public void setJutiyingyeting(String jutiyingyeting) {
@@ -263,12 +251,7 @@ public class Allocation  implements Serializable {
 	}
 
 	public String getShixianqu() {
-		if (shixianqu!=null) {
-			return this.shixianqu;
-		} else {
-			return "";
-		}
-		
+		return this.shixianqu;
 	}
 
 	public void setShixianqu(String shixianqu) {
@@ -316,12 +299,7 @@ public class Allocation  implements Serializable {
 	}
 
 	public String getYonghuhaoma() {
-		if (yonghuhaoma!=null) {
-			return this.yonghuhaoma;
-		} else {
-			return "";
-		}
-		
+		return this.yonghuhaoma;
 	}
 
 	public void setYonghuhaoma(String yonghuhaoma) {
@@ -370,11 +348,7 @@ public class Allocation  implements Serializable {
 	}
 
 	public Integer getFirstresult() {
-		if (firstresult!=null) {
-			return firstresult;
-		} else {
-			return 0;
-		}
+		return firstresult;
 	}
 
 	public void setFirstresult(Integer firstresult) {

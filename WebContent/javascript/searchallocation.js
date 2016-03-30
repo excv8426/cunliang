@@ -20,14 +20,14 @@ var qinglongyingyeting = new Array("秦皇岛市青龙县燕山路营业厅", "�
 		"秦皇岛市青龙县双山子营业厅", "秦皇岛市青龙县隔河头营业厅", "秦皇岛市青龙县八道河营业厅", "秦皇岛市青龙县肖营子营业厅",
 		"秦皇岛市青龙县凉水河营业厅");
 
-var searchallocationparam={shixianqu:"",
-		jutiyingyeting:"",
-		dianhuayuyueshijianlo:"",
-		dianhuayuyueshijianhi:"",
-		yonghuhaoma:"",
-		yudaotingbanlishijianlo:"",
-		yudaotingbanlishijianhi:"",
-		yifankui:"",
+var searchallocationparam={shixianqu:null,
+		jutiyingyeting:null,
+		dianhuayuyueshijianlo:null,
+		dianhuayuyueshijianhi:null,
+		yonghuhaoma:null,
+		yudaotingbanlishijianlo:null,
+		yudaotingbanlishijianhi:null,
+		yifankui:null,
 		maxresult:15,
 		firstresult:0};
 /**

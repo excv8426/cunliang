@@ -79,15 +79,6 @@ public class AllocationDao {
 		return criteria.list();
 	}
 	
-	public Allocation getAllocatio(Allocation allocation){
-		Session session=sessionFactory.getCurrentSession();
-		Criteria criteria=session.createCriteria(Allocation.class);
-		criteria.add(Restrictions.idEq(allocation.getPaidanid()));
-		Allocation allocation2=(Allocation) criteria.uniqueResult();
-		session.clear();
-		return allocation2;
-	}
-	
 	@SuppressWarnings("unchecked")
 	public List<Allocation> extractAllocations(Allocation allocation){
 		Session session=sessionFactory.getCurrentSession();
@@ -110,16 +101,16 @@ public class AllocationDao {
 			criteria.add(Restrictions.idEq(allocation.getPaidanid()));
 			return;
 		}
-		if (!allocation.getPaidanrenyuangonghao().equals("")) {
+		if (allocation.getPaidanrenyuangonghao()!=null) {
 			criteria.add(Restrictions.eq("paidanrenyuangonghao", allocation.getPaidanrenyuangonghao()));
 		}
-		if (!allocation.getYonghuhaoma().equals("")) {
+		if (allocation.getYonghuhaoma()!=null) {
 			criteria.add(Restrictions.eq("yonghuhaoma", allocation.getYonghuhaoma()));
 		}
-		if (!allocation.getShixianqu().equals("")) {
+		if (allocation.getShixianqu()!=null) {
 			criteria.add(Restrictions.eq("shixianqu", allocation.getShixianqu()));
 		}
-		if (!allocation.getJutiyingyeting().equals("")) {
+		if (allocation.getJutiyingyeting()!=null) {
 			criteria.add(Restrictions.eq("jutiyingyeting", allocation.getJutiyingyeting()));
 		}
 		if ((allocation.getDianhuayuyueshijianhi()!=null)&&(allocation.getDianhuayuyueshijianlo()!=null)) {
@@ -128,7 +119,7 @@ public class AllocationDao {
 		if ((allocation.getYudaotingbanlishijianhi()!=null)&&(allocation.getYudaotingbanlishijianlo()!=null)) {
 			criteria.add(Restrictions.between("yudaotingbanlishijian", allocation.getYudaotingbanlishijianlo(), allocation.getYudaotingbanlishijianhi()));
 		}
-		if (!allocation.getYifankui().equals("")) {
+		if (allocation.getYifankui()!=null) {
 			criteria.add(Restrictions.eq("yifankui", allocation.getYifankui()));
 		}
 	}
