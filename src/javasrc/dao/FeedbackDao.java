@@ -109,5 +109,11 @@ public class FeedbackDao {
 		if (!feedback.getYujingcelve().equals("")) {
 			criteria.add(Restrictions.eq("yujingcelve", feedback.getYujingcelve()));
 		}
+		if (!feedback.getHuifangqingkuang().equals("")) {
+			criteria.add(Restrictions.eq("huifangqingkuang", feedback.getHuifangqingkuang()));
+		}
+		if (!feedback.getKehuyixiang().equals("")) {
+			criteria.add(Restrictions.eq("kehuyixiang", feedback.getKehuyixiang()));
+		}
 	}
 }

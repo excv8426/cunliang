@@ -65,7 +65,7 @@ public class LoginuserController {
 		return map;
 	}
 	
-	@RequestMapping("resetpwd")
+	@RequestMapping("loginuser/system/resetpwd")
 	@ResponseBody
 	public Map<String, Object> resetPassword(Loginuser loginuser){
 		Map<String, Object> map=new HashMap<>();

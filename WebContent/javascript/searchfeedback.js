@@ -31,6 +31,8 @@ var searchfeedbackparam={waihujinglixingming:"",
 		chenggongbanliyewu:"",
 		bubanliyuanyin:"",
 		yujingcelve:"",
+		huifangqingkuang:"",
+		kehuyixiang:"",
 		maxresult:15,
 		firstresult:0,
 		fankuiriqilo:"",
@@ -45,6 +47,8 @@ function setsearchfeedbackparam(){
 	searchfeedbackparam.chenggongbanliyewu=$("#chenggongbanliyewu_select").val();
 	searchfeedbackparam.bubanliyuanyin=$("#bubanliyuanyin_select").val();
 	searchfeedbackparam.yujingcelve=$("#yujingcelve_select").val();
+	searchfeedbackparam.huifangqingkuang=$("#huifangqingkuang_select").val();
+	searchfeedbackparam.kehuyixiang=$("#kehuyixiang_select").val();
 	searchfeedbackparam.firstresult=0;
 }
 

@@ -96,6 +96,7 @@ function getloginusers(){
 				data=$.parseJSON(data);
 				var tabletrs=generateuserlisttr(data);
 				$("#loginuser_table").find("tbody").html(tabletrs);
+				bindtablebutton();
 			}
 		}
 	});
@@ -119,7 +120,7 @@ function bindtablebutton(){
 	$("#loginuser_table").children("tbody").find("button").each(function(){
 		var loginname=$(this).parent().siblings().eq(0).text();
 		$(this).bind("click",function(){
-			alert(loginname);
+			resetpassword(loginname);
 		});
 	});
 }
@@ -131,7 +132,7 @@ function resetpassword(loginname){
 			async:true,
 			url : "resetpwd.do",
 			type : "POST",
-			data : {loginname:loginname},
+			data : {loginname:loginname,password:"123456"},
 			dataType : "text",
 			success : function(data) {
 				if(hasauthority(data)){

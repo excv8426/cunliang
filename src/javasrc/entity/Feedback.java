@@ -122,7 +122,11 @@ public class Feedback implements Serializable {
 	}
 
 	public String getHuifangqingkuang() {
-		return this.huifangqingkuang;
+		if (huifangqingkuang==null) {
+			return "";
+		} else {
+			return this.huifangqingkuang;
+		}
 	}
 
 	public void setHuifangqingkuang(String huifangqingkuang) {
@@ -130,7 +134,11 @@ public class Feedback implements Serializable {
 	}
 
 	public String getKehuyixiang() {
-		return this.kehuyixiang;
+		if (kehuyixiang==null) {
+			return "";
+		} else {
+			return this.kehuyixiang;
+		}
 	}
 
 	public void setKehuyixiang(String kehuyixiang) {
