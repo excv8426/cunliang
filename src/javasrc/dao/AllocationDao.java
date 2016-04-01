@@ -1,6 +1,7 @@
 package javasrc.dao;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -105,6 +106,8 @@ public class AllocationDao {
 			criteria.add(Restrictions.eq("paidanrenyuangonghao", allocation.getPaidanrenyuangonghao()));
 		}
 		if (allocation.getYonghuhaoma()!=null) {
+			System.out.println("allocation.getYonghuhaoma()");
+			System.out.println(allocation.getYonghuhaoma());
 			criteria.add(Restrictions.eq("yonghuhaoma", allocation.getYonghuhaoma()));
 		}
 		if (allocation.getShixianqu()!=null) {
@@ -123,4 +126,5 @@ public class AllocationDao {
 			criteria.add(Restrictions.eq("yifankui", allocation.getYifankui()));
 		}
 	}
+	
 }

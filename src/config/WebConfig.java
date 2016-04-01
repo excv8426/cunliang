@@ -71,9 +71,9 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	public LocalSessionFactoryBean getLocalSessionFactoryBean(){
 		System.out.println("配置hibernate SessionFactory。");
 		Properties properties = new Properties(); 
-		properties.put("hibernate.show_sql", false); 
+		properties.put("hibernate.show_sql", true); 
 		properties.put("hibernate.dialect", "org.hibernate.dialect.SQLServer2008Dialect"); 
-		properties.put("hibernate.format_sql", false);
+		properties.put("hibernate.format_sql", true);
 		/*properties.put("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory");
 		properties.put("net.sf.ehcache.configurationResourceName", "");
 		properties.put("hibernate.cache.use_second_level_cache", true);
