@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.DigestUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -95,11 +96,11 @@ public class LoginuserController {
 		Map<String, Object> map=new HashMap<>();
 		HttpSession session=httpServletRequest.getSession(false);
 		loginuser.setLoginname(session.getAttribute("loginname").toString());
-		if (loginuser.getPassword().trim().equals("")) {
-			map.put("error", "nullproperty");
-		} else {
+		if (StringUtils.hasText(loginuser.getPassword())) {
 			int count=loginuserService.updatepassword(loginuser);
 			map.put("success", count);
+		} else {
+			map.put("error", "nullproperty");
 		}
 		return map;
 	}

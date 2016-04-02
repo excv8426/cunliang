@@ -54,11 +54,7 @@ public class Loginuser implements Serializable {
 	}
 
 	public String getPassword() {
-		if (this.password!=null) {
-			return this.password;
-		} else {
-			return "";
-		}
+		return this.password;
 	}
 
 	public void setPassword(String password) {

@@ -271,11 +271,7 @@ public class Client implements Serializable {
 	}
 
 	public String getDianhuahaoma() {
-		if (dianhuahaoma!=null) {
-			return this.dianhuahaoma;
-		} else {
-			return "";
-		}
+		return this.dianhuahaoma;
 	}
 
 	public void setDianhuahaoma(String dianhuahaoma) {
@@ -300,12 +296,7 @@ public class Client implements Serializable {
 	}
 
 	public String getChanpinbaohancbss() {
-		if (chanpinbaohancbss!=null) {
-			return this.chanpinbaohancbss;
-		} else {
-			return "";
-		}
-		
+		return this.chanpinbaohancbss;
 	}
 
 	public void setChanpinbaohancbss(String chanpinbaohancbss) {
@@ -364,11 +355,7 @@ public class Client implements Serializable {
 	}
 
 	public String getHeyueleixing() {
-		if (heyueleixing!=null) {
-			return this.heyueleixing;
-		} else {
-			return "";
-		}
+		return this.heyueleixing;
 	}
 
 	public void setHeyueleixing(String heyueleixing) {
@@ -443,11 +430,7 @@ public class Client implements Serializable {
 	}
 
 	public String getQuanwangyewuleixing() {
-		if (quanwangyewuleixing!=null) {
-			return this.quanwangyewuleixing;
-		} else {
-			return "";
-		}
+		return this.quanwangyewuleixing;
 	}
 
 	public void setQuanwangyewuleixing(String quanwangyewuleixing) {
@@ -471,11 +454,7 @@ public class Client implements Serializable {
 	}
 
 	public String getQuxian() {
-		if (quxian!=null) {
-			return this.quxian;
-		} else {
-			return "";
-		}
+		return this.quxian;
 	}
 
 	public void setQuxian(String quxian) {
@@ -483,12 +462,7 @@ public class Client implements Serializable {
 	}
 
 	public String getRongheleixing() {
-		if (rongheleixing!=null) {
-			return this.rongheleixing;
-		} else {
-			return "";
-		}
-		
+		return this.rongheleixing;
 	}
 
 	public void setRongheleixing(String rongheleixing) {
@@ -720,11 +694,7 @@ public class Client implements Serializable {
 	}
 
 	public String getWaihucelve() {
-		if (waihucelve==null) {
-			return "";
-		} else {
-			return waihucelve;
-		}
+		return waihucelve;
 	}
 
 	public void setWaihucelve(String waihucelve) {
@@ -748,11 +718,7 @@ public class Client implements Serializable {
 	}
 
 	public String getYifankui() {
-		if (yifankui==null) {
-			return "";
-		} else {
-			return yifankui;
-		}
+		return yifankui;
 	}
 
 	public void setYifankui(String yifankui) {
@@ -777,11 +743,7 @@ public class Client implements Serializable {
 	}
 
 	public String getKehujingli() {
-		if (kehujingli!=null) {
-			return kehujingli;
-		} else {
-			return "";
-		}
+		return kehujingli;
 	}
 
 	public void setKehujingli(String kehujingli) {
@@ -789,11 +751,7 @@ public class Client implements Serializable {
 	}
 
 	public String getTuijianzhengce() {
-		if (tuijianzhengce!=null) {
-			return tuijianzhengce;
-		} else {
-			return "";
-		}
+		return tuijianzhengce;
 	}
 
 	public void setTuijianzhengce(String tuijianzhengce) {
@@ -817,12 +775,7 @@ public class Client implements Serializable {
 	}
 
 	public Integer getFirstresult() {
-		if ((firstresult!=null)&&(!firstresult.equals(""))) {
-			return firstresult;
-		} else {
-			return 0;
-		}
-		
+		return firstresult;
 	}
 
 	public void setFirstresult(Integer firstresult) {
@@ -878,11 +831,7 @@ public class Client implements Serializable {
 	}
 
 	public String getBao() {
-		if (bao==null) {
-			return "";
-		} else {
-			return bao;
-		}
+		return bao;
 	}
 
 	public void setBao(String bao) {
@@ -890,11 +839,7 @@ public class Client implements Serializable {
 	}
 
 	public String getSuoshubanzu() {
-		if (suoshubanzu==null) {
-			return "";
-		} else {
-			return suoshubanzu;
-		}
+		return suoshubanzu;
 	}
 
 	public void setSuoshubanzu(String suoshubanzu) {

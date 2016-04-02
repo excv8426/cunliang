@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import javasrc.entity.Client;
 import javasrc.entity.Clientstatistics;
@@ -136,28 +137,28 @@ public class ClientDao {
 			criteria.add(Restrictions.idEq(client.getKehuxinxiid()));
 			return;
 		}
-		if (!client.getSuoshubanzu().equals("")) {
+		if (StringUtils.hasText(client.getSuoshubanzu())) {
 			criteria.add(Restrictions.like("suoshubanzu", "%"+client.getSuoshubanzu()+"%"));
 		}
-		if (!client.getKehujingli().equals("")) {
+		if (StringUtils.hasText(client.getKehujingli())) {
 			criteria.add(Restrictions.or(Restrictions.eq("kehujingli", client.getKehujingli()), Restrictions.isNull("kehujingli")));
 		}
-		if (!client.getDianhuahaoma().equals("")) {
+		if (StringUtils.hasText(client.getDianhuahaoma())) {
 			criteria.add(Restrictions.eq("dianhuahaoma",client.getDianhuahaoma()));
 		}
-		if (!client.getHeyueleixing().equals("")) {
+		if (StringUtils.hasText(client.getHeyueleixing())) {
 			criteria.add(Restrictions.like("heyueleixing", "%"+client.getHeyueleixing()+"%"));
 		}
-		if (!client.getRongheleixing().equals("")) {
+		if (StringUtils.hasText(client.getRongheleixing())) {
 			criteria.add(Restrictions.like("rongheleixing", "%"+client.getRongheleixing()+"%"));
 		}
-		if (!client.getTuijianzhengce().equals("")) {
+		if (StringUtils.hasText(client.getTuijianzhengce())) {
 			criteria.add(Restrictions.like("tuijianzhengce", "%"+client.getTuijianzhengce()+"%"));
 		}
-		if (!client.getChanpinbaohancbss().equals("")) {
+		if (StringUtils.hasText(client.getChanpinbaohancbss())) {
 			criteria.add(Restrictions.like("chanpinbaohancbss", "%"+client.getChanpinbaohancbss()+"%"));
 		}
-		if (!client.getQuanwangyewuleixing().equals("")) {
+		if (StringUtils.hasText(client.getQuanwangyewuleixing())) {
 			criteria.add(Restrictions.like("quanwangyewuleixing", "%"+client.getQuanwangyewuleixing()+"%"));
 		}
 		if ((client.getKaihuriqilo()!=null)&&(client.getKaihuriqihi()!=null)) {
@@ -169,17 +170,17 @@ public class ClientDao {
 		if ((client.getFentanqianshourulo()!=null)&&(client.getFentanqianshouruhi()!=null)) {
 			criteria.add(Restrictions.between("fentanqianshouru", client.getFentanqianshourulo(), client.getFentanqianshouruhi()));
 		}
-		if (!client.getWaihucelve().equals("")) {
+		if (StringUtils.hasText(client.getWaihucelve())) {
 			criteria.add(Restrictions.eq("waihucelve", client.getWaihucelve()));
 		}
-		if (!client.getYifankui().equals("")) {
+		if (StringUtils.hasText(client.getYifankui())) {
 			if (client.getYifankui().equals("是")) {
 				criteria.add(Restrictions.eq("yifankui", "是"));
 			} else {
 				criteria.add(Restrictions.isNull("yifankui"));
 			}
 		}
-		if (!client.getBao().equals("")) {
+		if (StringUtils.hasText(client.getBao())) {
 			criteria.createCriteria("discounts").add(Restrictions.like("bao", "%"+client.getBao()+"%"));
 		}
 	}

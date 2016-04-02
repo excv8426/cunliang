@@ -113,14 +113,14 @@ function generateallocationlisttr(allocationlist){
 }
 
 function setsearchallocationparam(){
-	searchallocationparam.shixianqu=$("#shixianqu_select").val()==""?null:$("#shixianqu_select").val();
-	searchallocationparam.jutiyingyeting=$("#jutiyingyeting_select").val()==""?null:$("#jutiyingyeting_select").val();
-	searchallocationparam.dianhuayuyueshijianlo=$("#dianhuayuyueshijianlo_input").val()==""?null:$("#dianhuayuyueshijianlo_input").val();
-	searchallocationparam.dianhuayuyueshijianhi=$("#dianhuayuyueshijianhi_input").val()==""?null:$("#dianhuayuyueshijianhi_input").val();
-	searchallocationparam.yonghuhaoma=$("#yonghuhaoma_input").val()==""?null:$("#yonghuhaoma_input").val();
-	searchallocationparam.yudaotingbanlishijianlo=$("#yudaotingbanlishijianlo_input").val()==""?null:$("#yudaotingbanlishijianlo_input").val();
-	searchallocationparam.yudaotingbanlishijianhi=$("#yudaotingbanlishijianhi_input").val()==""?null:$("#yudaotingbanlishijianhi_input").val();
-	searchallocationparam.yifankui=$("#yifankui_select").val()==""?null:$("#yifankui_select").val();
+	searchallocationparam.shixianqu=$("#shixianqu_select").val();
+	searchallocationparam.jutiyingyeting=$("#jutiyingyeting_select").val();
+	searchallocationparam.dianhuayuyueshijianlo=$("#dianhuayuyueshijianlo_input").val();
+	searchallocationparam.dianhuayuyueshijianhi=$("#dianhuayuyueshijianhi_input").val();
+	searchallocationparam.yonghuhaoma=$("#yonghuhaoma_input").val();
+	searchallocationparam.yudaotingbanlishijianlo=$("#yudaotingbanlishijianlo_input").val();
+	searchallocationparam.yudaotingbanlishijianhi=$("#yudaotingbanlishijianhi_input").val();
+	searchallocationparam.yifankui=$("#yifankui_select").val();
 	searchallocationparam.firstresult=0;
 }
 /**

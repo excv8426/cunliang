@@ -1,7 +1,6 @@
 package javasrc.dao;
 
 import java.util.List;
-import java.util.function.Consumer;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -14,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import javasrc.entity.Allocation;
 
@@ -102,18 +102,18 @@ public class AllocationDao {
 			criteria.add(Restrictions.idEq(allocation.getPaidanid()));
 			return;
 		}
-		if (allocation.getPaidanrenyuangonghao()!=null) {
+		if (StringUtils.hasText(allocation.getPaidanrenyuangonghao())) {
 			criteria.add(Restrictions.eq("paidanrenyuangonghao", allocation.getPaidanrenyuangonghao()));
 		}
-		if (allocation.getYonghuhaoma()!=null) {
+		if (StringUtils.hasText(allocation.getYonghuhaoma())) {
 			System.out.println("allocation.getYonghuhaoma()");
 			System.out.println(allocation.getYonghuhaoma());
 			criteria.add(Restrictions.eq("yonghuhaoma", allocation.getYonghuhaoma()));
 		}
-		if (allocation.getShixianqu()!=null) {
+		if (StringUtils.hasText(allocation.getShixianqu())) {
 			criteria.add(Restrictions.eq("shixianqu", allocation.getShixianqu()));
 		}
-		if (allocation.getJutiyingyeting()!=null) {
+		if (StringUtils.hasText(allocation.getJutiyingyeting())) {
 			criteria.add(Restrictions.eq("jutiyingyeting", allocation.getJutiyingyeting()));
 		}
 		if ((allocation.getDianhuayuyueshijianhi()!=null)&&(allocation.getDianhuayuyueshijianlo()!=null)) {
@@ -122,7 +122,7 @@ public class AllocationDao {
 		if ((allocation.getYudaotingbanlishijianhi()!=null)&&(allocation.getYudaotingbanlishijianlo()!=null)) {
 			criteria.add(Restrictions.between("yudaotingbanlishijian", allocation.getYudaotingbanlishijianlo(), allocation.getYudaotingbanlishijianhi()));
 		}
-		if (allocation.getYifankui()!=null) {
+		if (StringUtils.hasText(allocation.getYifankui())) {
 			criteria.add(Restrictions.eq("yifankui", allocation.getYifankui()));
 		}
 	}

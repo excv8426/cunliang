@@ -11,6 +11,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import javasrc.entity.Feedback;
 
@@ -85,34 +86,34 @@ public class FeedbackDao {
 			criteria.add(Restrictions.idEq(feedback.getWaihufankuiid()));
 			return;
 		}
-		if (feedback.getWaihuhaoma()!=null) {
+		if (StringUtils.hasText(feedback.getWaihuhaoma())) {
 			criteria.add(Restrictions.eq("waihuhaoma",feedback.getWaihuhaoma()));
 		}
-		if (feedback.getWaihujinglixingming()!=null) {
+		if (StringUtils.hasText(feedback.getWaihujinglixingming())) {
 			criteria.add(Restrictions.or(Restrictions.eq("waihujinglixingming", feedback.getWaihujinglixingming()), Restrictions.isNull("waihujinglixingming")));
 		}
-		if (feedback.getFankuirenyuangonghao()!=null) {
+		if (StringUtils.hasText(feedback.getFankuirenyuangonghao())) {
 			criteria.add(Restrictions.eq("fankuirenyuangonghao", feedback.getFankuirenyuangonghao()));
 		}
 		if ((feedback.getFankuiriqihi()!=null)&&(feedback.getFankuiriqilo()!=null)) {
 			criteria.add(Restrictions.between("fankuiriqi", feedback.getFankuiriqilo(), feedback.getFankuiriqihi()));
 		}
-		if (feedback.getWaihucelve()!=null) {
+		if (StringUtils.hasText(feedback.getWaihucelve())) {
 			criteria.add(Restrictions.like("waihucelve", "%"+feedback.getWaihucelve()+"%"));
 		}
-		if (feedback.getChenggongbanliyewu()!=null) {
+		if (StringUtils.hasText(feedback.getChenggongbanliyewu())) {
 			criteria.add(Restrictions.eq("chenggongbanliyewu", feedback.getChenggongbanliyewu()));
 		}
-		if (feedback.getBubanliyuanyin()!=null) {
+		if (StringUtils.hasText(feedback.getBubanliyuanyin())) {
 			criteria.add(Restrictions.eq("bubanliyuanyin", feedback.getBubanliyuanyin()));
 		}
-		if (feedback.getYujingcelve()!=null) {
+		if (StringUtils.hasText(feedback.getYujingcelve())) {
 			criteria.add(Restrictions.eq("yujingcelve", feedback.getYujingcelve()));
 		}
-		if (feedback.getHuifangqingkuang()!=null) {
+		if (StringUtils.hasText(feedback.getHuifangqingkuang())) {
 			criteria.add(Restrictions.eq("huifangqingkuang", feedback.getHuifangqingkuang()));
 		}
-		if (feedback.getKehuyixiang()!=null) {
+		if (StringUtils.hasText(feedback.getKehuyixiang())) {
 			criteria.add(Restrictions.eq("kehuyixiang", feedback.getKehuyixiang()));
 		}
 	}
