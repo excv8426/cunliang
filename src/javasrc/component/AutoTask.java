@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import javasrc.service.ExcelService;
 import javasrc.service.LoginuserService;
 @Component
 public class AutoTask {
@@ -20,7 +19,7 @@ public class AutoTask {
 	 * 每天x秒x分x时执行一次。*/
 	@Scheduled(cron="0 0 11 * * ?" )
 	private void deletetemporaryfiles(){
-		File temporaryfiles=new File(ExcelService.webcontentpath+"temporary/");
+		File temporaryfiles=new File(AppProperty.serverpath+"temporary/");
 		try {
 			FileUtils.cleanDirectory(temporaryfiles);
 		} catch (IOException e) {

@@ -45,29 +45,6 @@ public class ObjectUtils {
 	}
 	
 	/**
-	 * 统计对象中null或""属性的个数。*/
-	public static Integer nullpropertycount(Object object){
-		Integer nullcount=0;
-		Object property=null;
-		Field[]  fields=object.getClass().getDeclaredFields();
-		for (int i = 0; i < fields.length; i++) {
-			fields[i].setAccessible(true);
-			try {
-				property=fields[i].get(object);
-				if (property==null) {
-					nullcount++;
-				}else if (property.toString().trim().equals("")) {
-					nullcount++;
-				}
-			} catch (IllegalArgumentException e) {
-				e.printStackTrace();
-			} catch (IllegalAccessException e) {
-				e.printStackTrace();
-			}
-		}
-		return nullcount;
-	}
-	/**
 	 * 获取第一个异常。*/
 	public static Throwable findcause(Throwable throwable) {
 		if (throwable.getCause()!=null) {

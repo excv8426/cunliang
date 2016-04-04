@@ -33,7 +33,10 @@ public class LoginuserController {
 	@ResponseBody
 	public Map<String, Object> addLoginuser(Loginuser loginuser){
 		Map<String, Object> map=new HashMap<>();
-		if (ObjectUtils.nullpropertycount(loginuser)<=3) {
+		if (StringUtils.hasText(loginuser.getLoginname())&&
+				StringUtils.hasText(loginuser.getPersonname())&&
+				StringUtils.hasText(loginuser.getAuthority())&&
+				StringUtils.hasText(loginuser.getPassword())) {
 			loginuserService.addLoginuser(loginuser);
 			map.put("success", "1");
 		} else {

@@ -1,9 +1,8 @@
 package javasrc.init;
 
+import javasrc.component.AppProperty;
 import javasrc.filter.AuthorityFilter;
 import javasrc.listener.SessionListener;
-import javasrc.service.ExcelService;
-
 import javax.servlet.ServletContext;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
@@ -20,7 +19,7 @@ public class MyWebAppInitializer extends
 		int length=path.length();
 		path=path.substring(0, length-16);
 		path=path.replaceAll("%20", " ");
-		ExcelService.webcontentpath=path;
+		AppProperty.serverpath=path;
 	}
 
 	@Override

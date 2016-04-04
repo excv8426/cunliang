@@ -18,10 +18,11 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 
+import javasrc.component.AppProperty;
 import javasrc.component.ExportedObject;
 
 public class ExcelService {
-	public static String webcontentpath=""; 
+
 	/**
 	 * 创建Excel文件。
 	 * @param data Excel数据。
@@ -31,7 +32,7 @@ public class ExcelService {
 		String filepath="temporary/";
 		String filename=UUID.randomUUID().toString()+".xlsx";
 		filepath=filepath+filename;
-		filepath=webcontentpath+filepath;
+		filepath=AppProperty.serverpath+filepath;
 		File excelfile=new File(filepath);
 		FileOutputStream out=null;
 		try {
@@ -86,7 +87,7 @@ public class ExcelService {
 		String filepath="temporary/";
 		String filename=UUID.randomUUID().toString()+".xlsx";
 		filepath=filepath+filename;
-		filepath=webcontentpath+filepath;
+		filepath=AppProperty.serverpath+filepath;
 		File excelfile=new File(filepath);
 		FileOutputStream out=null;
 		try {
