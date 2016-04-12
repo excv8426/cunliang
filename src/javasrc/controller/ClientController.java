@@ -2,7 +2,6 @@ package javasrc.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +16,10 @@ import javasrc.service.ClientService;
 public class ClientController {
 	@Autowired
 	private ClientService clientService;
-	@Autowired
-	private HttpServletRequest httpServletRequest;
 	
 	@RequestMapping("loginuser/default/getClients")
 	@ResponseBody
-	public List<Client> getClients(Client client){
-		HttpSession session=httpServletRequest.getSession(false);
+	public List<Client> getClients(HttpSession session,Client client){
 		if (session.getAttribute("authority").equals("2")) {
 			client.setKehujingli(session.getAttribute("personname").toString());
 		}
@@ -32,8 +28,7 @@ public class ClientController {
 	
 	@RequestMapping("loginuser/default/getClientscount")
 	@ResponseBody
-	public Integer getClientscount(Client client){
-		HttpSession session=httpServletRequest.getSession(false);
+	public Integer getClientscount(HttpSession session,Client client){
 		if (session.getAttribute("authority").equals("2")) {
 			client.setKehujingli(session.getAttribute("personname").toString());
 		}
@@ -42,8 +37,7 @@ public class ClientController {
 	
 	@RequestMapping("loginuser/default/extractClient")
 	@ResponseBody
-	public String extractClient(Client client){
-		HttpSession session=httpServletRequest.getSession(false);
+	public String extractClient(HttpSession session,Client client){
 		if (session.getAttribute("authority").equals("2")) {
 			client.setKehujingli(session.getAttribute("personname").toString());
 		}

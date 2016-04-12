@@ -26,8 +26,6 @@ import javasrc.service.LoginuserService;
 public class LoginuserController {
 	@Autowired
 	private LoginuserService loginuserService;
-	@Autowired
-	private HttpServletRequest httpServletRequest;
 	
 	@RequestMapping("loginuser/system/addLoginuser")
 	@ResponseBody
@@ -47,7 +45,7 @@ public class LoginuserController {
 	
 	@RequestMapping("checkLoginuser")
 	@ResponseBody
-	public Map<String, Object> checkLoginuser(Loginuser loginuser){
+	public Map<String, Object> checkLoginuser(HttpServletRequest httpServletRequest,Loginuser loginuser){
 		Map<String, Object> map=new HashMap<>();
 		String namepsd=loginuser.getLoginname()+loginuser.getPassword();
 		loginuser.setPassword(DigestUtils.md5DigestAsHex(namepsd.getBytes()));
@@ -95,7 +93,7 @@ public class LoginuserController {
 	
 	@RequestMapping("loginuser/default/updatepassword")
 	@ResponseBody
-	public Map<String, Object> updatepassword(Loginuser loginuser){
+	public Map<String, Object> updatepassword(HttpServletRequest httpServletRequest,Loginuser loginuser){
 		Map<String, Object> map=new HashMap<>();
 		HttpSession session=httpServletRequest.getSession(false);
 		loginuser.setLoginname(session.getAttribute("loginname").toString());

@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
 
 
 @Configuration
@@ -108,4 +109,11 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		return commonsMultipartResolver;
 	}
 	
+	@Bean
+	public RequestMappingHandlerAdapter getRequestMappingHandlerAdapter(){
+		System.out.println("##getRequestMappingHandlerAdapter##");
+		RequestMappingHandlerAdapter requestMappingHandlerAdapter=new RequestMappingHandlerAdapter();
+		requestMappingHandlerAdapter.setSynchronizeOnSession(true);
+		return requestMappingHandlerAdapter;
+	}
 }
