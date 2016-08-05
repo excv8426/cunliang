@@ -48,13 +48,9 @@ public class ObjectUtils {
 	 * 获取第一个异常。*/
 	public static Throwable findcause(Throwable throwable) {
 		if (throwable.getCause()!=null) {
-			if (throwable.getCause().getCause()!=null) {
-				return findcause(throwable.getCause());
-			}else {
-				return throwable.getCause();
-			}
+			return findcause(throwable.getCause());
 		}else {
-			return null;
+			return throwable;
 		}
 	}
 	
